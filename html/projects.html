@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/projects.css">
+</head>
+
+
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="Logo">
+                Portfolio
+            </div>
+            <div class="menu">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./projects.html" class="action">Projects</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <h3>Projects</h3>
+                <p class="section-sub">UX & UI Case Studies</p>
+            </div>
+            <div class="grid">
+                <article class="project" data-reveal>
+                    <div class="project-thumb">
+                        <img src="../img/3.png" alt="">
+                    </div>
+                    <div class="project-body">
+                        <h4>ระบบตรวจจับกระแสไฟฟ้าและแจ้งเตือนผ่าน Line</h4>
+                        <p>หากเกิดเหตุการไฟดับจะมีการแจ้งเตือนผ่าน Line และเช็คสถานะการใช้ไฟฟ้าได้ผ่านทางเว็บไซต์</p>
+                        <div class="meta"><span class="tag">PZEM-004T</span><span class="tag">React</span><span
+                                class="tag">LINE Notify</span></div>
+                    </div>
+                </article>
+
+                <article class="project" data-reveal>
+                    <div class="project-thumb">
+                        <img src="../img/4.png" alt="">
+                    </div>
+                    <div class="project-body">
+                        <h4>ระบบศิษย์เก่าแผนกเทคโนโลยีสารสนเทศ</h4>
+                        <p>ใช้สำหรับเก็บข้อมูลศิษย์เก่าที่จบการศึกษาไปแล้ว มีหน้าการบริจาค และหน้าร้านค้าไว้ให้สำหรับศิษย์เก่า หรือบุคคลภายนอกได้เข้ามาใช้งาน</p>
+                        <div class="meta"><span class="tag">Figma</span><span class="tag">HTML/CSS</span><span
+                                class="tag">Database</span></div>
+                    </div>
+                </article>
+
+                <article class="project" data-reveal>
+                    <div class="project-thumb">
+                        <img src="../img/5.png" alt="">
+                    </div>
+                    <div class="project-body">
+                        <h4>ระบบจัดการการเงินและกิจกรรมประจำห้องเรียน</h4>
+                        <p>ใช้สำหรับจัดการการเงินและกิจกรรมของห้องเรียน รวมทั้งจัดการสมาชิกภายในห้อง</p>
+                        <div class="meta"><span class="tag">User Flow</span><span class="tag">Wireframe</span><span
+                                class="tag">UI</span></div>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: .15 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    </script>
+
+</body>
+
+</html>

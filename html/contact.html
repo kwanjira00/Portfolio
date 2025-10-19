@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+
+
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="Logo">
+                Portfolio
+            </div>
+            <div class="menu">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./contact.html" class="action">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section id="contact">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <h3>Contact</h3>
+                <p class="section-sub">Let's create something meaningful together.</p>
+            </div>
+            <div class="contact-wrap">
+                <div class="card" data-reveal>
+                    <form
+                        onsubmit="event.preventDefault(); alert('ขอบคุณครับ/ค่ะ เดี๋ยวฉันจะติดต่อกลับโดยเร็ว!'); this.reset();">
+                        <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
+                            <div>
+                                <label for="name" style="display:block;font-size:14px;margin-bottom:6px">ชื่อ</label>
+                                <input id="name" required placeholder="พิมพ์ชื่อของคุณ" />
+                            </div>
+                            <div>
+                                <label for="email" style="display:block;font-size:14px;margin-bottom:6px">อีเมล</label>
+                                <input id="email" type="email" required placeholder="you@example.com" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="msg" style="display:block;font-size:14px;margin:8px 0 6px">ข้อความ</label>
+                            <textarea id="msg" required
+                                placeholder="เล่าเกี่ยวกับโปรเจกต์หรือความต้องการของคุณ"></textarea>
+                        </div>
+                        <button class="btn" type="submit">ส่งข้อความ</button>
+                    </form>
+                </div>
+                <div class="card" data-reveal>
+                    <h4>ติดต่อฉันได้ที่</h4>
+                    <p>อีเมล: <a href="mailto:you@mail.com">kjrpt05@gmail.com</a></p>
+                    <div class="socials" aria-label="ลิงก์โซเชียล">
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: .15 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    </script>
+
+</body>
+
+</html>

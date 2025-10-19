@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+
+
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="Logo">
+                Portfolio
+            </div>
+            <div class="menu">
+                <a href="./index.html">Home</a>
+                <a href="./about.html" class="action">About</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <h3>About</h3>
+                <p class="section-sub">Who am I and what do I do?</p>
+            </div>
+            <div class="about">
+                <div class="card" data-reveal>
+                    <h4>Profile</h4>
+                    <p>ฉันเป็นนักศึกษาที่หลงใหลในการออกแบบประสบการณ์ดิจิทัลที่ใช้งานง่าย ผสานแนวคิด UX เข้ากับงาน UI</p>
+                    <ul class="list">
+                        <li><b>การศึกษา:</b> KMUTNB • B.IT (Information Technology)</li>
+                        <li><b>โฟกัส:</b> UX Research, UI Design, Web Dev, Database</li>
+                        <li><b>เครื่องมือ:</b> Figma, Photoshop, HTML/CSS, VS Code, Git</li>
+                    </ul>
+                </div>
+                <div class="card" data-reveal>
+                    <h4>Skills</h4>
+                    <div style="display:grid;gap:12px">
+                        <div><small>Figma</small>
+                            <div class="progress"><span style="width:90%"></span></div>
+                        </div>
+                        <div><small>Prototyping</small>
+                            <div class="progress"><span style="width:86%"></span></div>
+                        </div>
+                        <div><small>UX Research</small>
+                            <div class="progress"><span style="width:75%"></span></div>
+                        </div>
+                        <div><small>HTML & CSS</small>
+                            <div class="progress"><span style="width:80%"></span></div>
+                        </div>
+                    </div>
+                    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+                        <span class="tag">Design System</span>
+                        <span class="tag">Accessibility</span>
+                        <span class="tag">Usability Testing</span>
+                        <span class="tag">Responsive Web</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: .15 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    </script>
+
+</body>
+
+</html>
