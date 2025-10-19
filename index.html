@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="Logo">
+                Portfolio
+            </div>
+            <div class="menu">
+                <a href="./index.html" class="action">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="home">
+        <div class="container home-grid">
+            <div data-reveal>
+                <span class="ITI">ITI Student</span>
+                <h2>สวัสดีค่ะ ฉันคือ <br>
+                    <span
+                        style="background:linear-gradient(90deg,var(--primary),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent">
+                        นางสาวขวัญจิรา พึ่งโต
+                    </span>
+                    <br> สนใจการพัฒนา Application และ Website
+                </h2>
+                <p>
+                    โฟกัสด้านการพัฒนาWeb FULL STACK รวมถึงการออกแบบด้าน UX/UI Designer<br>
+                    ชอบเรียนรู้ด้วยโปรเจกต์จริงและทดลองด้วยตนเอง
+                </p>
+                <div class="chip-row">
+                    <span class="chip">Figma</span>
+                    <span class="chip">Prototype</span>
+                    <span class="chip">HTML/CSS</span>
+                    <span class="chip">SQL</span>
+                    <span class="chip">JavaScript</span>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                    <a class="btn" href="./projects.html">Projects</a>
+                    <a class="btn secondary" href="./contact.html">Contact</a>
+                </div>
+            </div>
+            <div data-reveal>
+                <div class="home-card">
+                    <img class="avatar" src="../img/imgME.svg" alt="ภาพโปรไฟล์" width="100%" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: .15 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    </script>
+
+</body>
+
+</html>
